@@ -17,6 +17,10 @@ public class CalculoDeAreas {
 		return base * altura;
 	}
 	
+	public static double calcularAreaTrapecio(int altura, int lado1, int lado2) {
+		return ((lado1+lado2)/2)*altura;
+	}
+	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		menu();
@@ -29,8 +33,18 @@ public class CalculoDeAreas {
 			int altura = sc1.nextInt();
 			sc1.close();
 			System.out.println("El área del triangulo es: " + calcularAreaTriangulo(base, altura));
-		} 
-		
+		} else if (numeroMenu == 2) {
+			Scanner sc2 = new Scanner(System.in);
+			System.out.println("Inserte la altura");
+			int altura = sc2.nextInt();
+			System.out.println("Inserte uno de los lados");
+			int lado1 = sc2.nextInt();
+			System.out.println("Inserte el otro lado");
+			int lado2 = sc2.nextInt();
+			sc2.close();
+			System.out.println("El área del trapecio es: " + calcularAreaTrapecio(altura, lado1, lado2));
+		}
+		sc.close();
 	}
 
 }
